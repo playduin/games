@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SUDOKU</title>
+<style>
+.cell {
+	position: absolute;
+	width: 10.5%;
+	height: 10.5%;
+	background: #262626;
+}
+.line-1 {
+	position: absolute;
+	top: 0px;
+	left: 32.75%;
+	width: 1%;
+	height: 100%;
+	background: #AAAAAA;
+}
+.line-2 {
+	position: absolute;
+	top: 0px;
+	left: 65.75%;
+	width: 1%;
+	height: 100%;
+	background: #AAAAAA;
+}
+.line-3 {
+	position: absolute;
+	top: 32.75%;
+	left: 0px;
+	width: 100%;
+	height: 1%;
+	background: #AAAAAA;
+}
+.line-4 {
+	position: absolute;
+	top: 65.75%;
+	left: 0px;
+	width: 100%;
+	height: 1%;
+	background: #AAAAAA;
+}
+.field {
+	position: relative;
+	width: 100%;
+	height: 100vw;
+	background: #AAAAAA;
+}
+
+number-text {
+	user-select: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+	font-size: 9vw;
+}
+
+.playButton {
+	width: 100%;
+	height: 9vw;
+	background: #484848;
+}
+
+sudoku-text {
+	user-select: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+	font-size: 8vw;
+}
+</style>
+<script>
+var numbers = [];
+
+function start() {
+	startGame();
+	for (var y = 0; y < 9; ++y) {
+		for (var x = 0; x < 9; ++x) {
+			document.getElementsByClassName('field')[0].innerHTML +=
+			'<div id="cell' + (x + y * 9) + '" class="cell" style="top: ' + ((y * 11) + 0.5) + '%; left: ' + ((x * 11) + 0.5) + '%;" onclick="cellClick(' + (x + y * 9) + ')"></div>';
+		}
+	}
+	document.getElementsByClassName('field')[0].innerHTML += '<div class="line-1"></div>';
+	document.getElementsByClassName('field')[0].innerHTML += '<div class="line-2"></div>';
+	document.getElementsByClassName('field')[0].innerHTML += '<div class="line-3"></div>';
+	document.getElementsByClassName('field')[0].innerHTML += '<div class="line-4"></div>';
+}
+
+function startGame() {
+	for (var i = 0; i < 81; ++i) {
+		numbers.push(0);
+	}
+}
+
+function setNumber(cell, num) {
+	var number = "";
+	if (num > 0) {
+		number = num + '';
+	}
+	document.getElementById('cell' + cell).innerHTML = '<center><number-text><font color="#EEEEEE">' + number + '</font></number-text></center>';
+}
+
+function cellClick(cell) {
+	numbers[cell] = (numbers[cell] + 1) % 10;
+	setNumber(cell, numbers[cell]);
+}
+
+function play() {
+	var data = "";
+	for (var i = 0; i < 81; ++i) {
+		data += numbers[i]
+	}
+	location.href = "game.html#" + data;
+}
+</script>
+</head>
+<body bgcolor="#262626" onload="start()">
+<div class="field"></div>
+<br>
+<div class="playButton" onclick="play()"><center><sudoku-text><font color="#EEEEEE">PLAY</font></sudoku-text></center></div><br>
+</body>
+</html>

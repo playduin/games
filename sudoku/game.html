@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SUDOKU</title>
+<style>
+.cell {
+	position: absolute;
+	width: 10.5%;
+	height: 10.5%;
+	background: #262626;
+}
+.line-1 {
+	position: absolute;
+	top: 0px;
+	left: 32.75%;
+	width: 1%;
+	height: 100%;
+	background: #AAAAAA;
+}
+.line-2 {
+	position: absolute;
+	top: 0px;
+	left: 65.75%;
+	width: 1%;
+	height: 100%;
+	background: #AAAAAA;
+}
+.line-3 {
+	position: absolute;
+	top: 32.75%;
+	left: 0px;
+	width: 100%;
+	height: 1%;
+	background: #AAAAAA;
+}
+.line-4 {
+	position: absolute;
+	top: 65.75%;
+	left: 0px;
+	width: 100%;
+	height: 1%;
+	background: #AAAAAA;
+}
+.field {
+	position: relative;
+	width: 100%;
+	height: 100vw;
+	background: #AAAAAA;
+}
+
+number-text {
+	user-select: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+	font-size: 9vw;
+}
+
+sudoku-text {
+	font-size: 10vw;
+}
+</style>
+<script>
+var numbers = [];
+var userNumbers = [];
+const squares = [
+	1, 1, 1, 2, 2, 2, 3, 3, 3,
+	1, 1, 1, 2, 2, 2, 3, 3, 3,
+	1, 1, 1, 2, 2, 2, 3, 3, 3,
+	4, 4, 4, 5, 5, 5, 6, 6, 6,
+	4, 4, 4, 5, 5, 5, 6, 6, 6,
+	4, 4, 4, 5, 5, 5, 6, 6, 6,
+	7, 7, 7, 8, 8, 8, 9, 9, 9,
+	7, 7, 7, 8, 8, 8, 9, 9, 9,
+	7, 7, 7, 8, 8, 8, 9, 9, 9,
+];
+var solved = false;
+
+function start() {
+	startGame();
+	for (var y = 0; y < 9; ++y) {
+		for (var x = 0; x < 9; ++x) {
+			var number = "";
+			if (numbers[x + y * 9] > 0) {
+				number = numbers[x + y * 9] + '';
+			}
+			document.getElementsByClassName('field')[0].innerHTML +=
+			'<div id="cell' + (x + y * 9) + '" class="cell" style="top: ' + ((y * 11) + 0.5) + '%; left: ' + ((x * 11) + 0.5) + '%;" onclick="cellClick(' + (x + y * 9) + ')"><center><number-text><font color="#EEEEEE">' + number + '</font></number-text></center></div>';
+		}
+	}
+	document.getElementsByClassName('field')[0].innerHTML += '<div class="line-1"></div>';
+	document.getElementsByClassName('field')[0].innerHTML += '<div class="line-2"></div>';
+	document.getElementsByClassName('field')[0].innerHTML += '<div class="line-3"></div>';
+	document.getElementsByClassName('field')[0].innerHTML += '<div class="line-4"></div>';
+}
+
+function startGame() {
+	var data = location.href.split('#')[1];
+	for (var i = 0; i < 81; ++i) {
+		numbers.push(data[i]);
+	}
+	for (var i = 0; i < 81; ++i) {
+		userNumbers.push(0);
+	}
+}
+
+function setNumber(cell, num) {
+	var number = "";
+	if (num > 0) {
+		number = num + '';
+	}
+	document.getElementById('cell' + cell).innerHTML = '<center><number-text><font color="#AAAAAA">' + number + '</font></number-text></center>';
+}
+
+function cellClick(cell) {
+	if (!solved) {
+		if (numbers[cell] == 0) {
+			userNumbers[cell] = (userNumbers[cell] + 1) % 10;
+			setNumber(cell, userNumbers[cell]);
+		}
+		checkGame();
+		if (solved) {
+			document.getElementById('sudokuText').innerHTML = '<center><sudoku-text><font color="#00FF00">Sudoku is solved!</font></sudoku-text><center>';
+		}
+	}
+}
+
+function checkGame() {
+	var tempNumbers = [];
+	for (var i = 0; i < 81; ++i) {
+		if (numbers[i] > 0) {
+			tempNumbers.push(numbers[i]);
+		} else {
+			tempNumbers.push(userNumbers[i]);
+		}
+	}
+	solved = true;
+	
+	var solvedCount = 0;
+	for (var y = 0; y < 9; ++y) {
+		for (var num = 1; num < 10; ++num) {
+			for (var x = 0; x < 9; ++x) {
+				if (tempNumbers[x + y * 9] == num) {
+					++solvedCount;
+					break;
+				}
+			}
+		}
+	}
+	if (solvedCount < 81) {
+		solved = false;
+		return;
+	}
+	
+	solvedCount = 0;
+	for (var x = 0; x < 9; ++x) {
+		for (var num = 1; num < 10; ++num) {
+			for (var y = 0; y < 9; ++y) {
+				if (tempNumbers[x + y * 9] == num) {
+					++solvedCount;
+					break;
+				}
+			}
+		}
+	}
+	if (solvedCount < 81) {
+		solved = false;
+		return;
+	}
+	
+	solvedCount = 0;
+	for (var square = 1; square < 10; ++square) {
+		for (var num = 1; num < 10; ++num) {
+			for (var i = 0; i < 81; ++i) {
+				if (squares[i] == square && tempNumbers[i] == num) {
+					++solvedCount;
+					break;
+				}
+			}
+		}
+	}
+	if (solvedCount < 81) {
+		solved = false;
+	}
+}
+</script>
+</head>
+<body bgcolor="#262626" onload="start()">
+<div class="field"></div>
+<br>
+<div id="sudokuText"><center><sudoku-text><font color="#AAAAAA">SUDOKU</font></sudoku-text></center></div>
+</body>
+</html>

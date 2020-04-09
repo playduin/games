@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SUDOKU</title>
+<style>
+.levelButton {
+	width: 100%;
+	height: 9vw;
+	background: #484848;
+}
+
+sudoku-text {
+	user-select: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+	font-size: 8vw;
+}
+</style>
+<script>
+function loadLevel(data) {
+	location.href = "game.html#" + data;
+}
+</script>
+</head>
+<body bgcolor="#262626">
+<div><center><sudoku-text><font color="#AAAAAA">SUDOKU</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="location.href='custom.html'"><center><sudoku-text><font color="#EEEEEE">CUSTOM</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('400058010820401730350070004002500106073006400106704009710040200005810607090230081')"><center><sudoku-text><font color="#EEEEEE">1</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('006004017150070038000321040810097003060400752407503180002089001070140805981700600')"><center><sudoku-text><font color="#EEEEEE">2</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('530692000026508034980030560007106050005070643209340007108900425690400308400021090')"><center><sudoku-text><font color="#EEEEEE">3</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('603052090209081063041936050120860000900005024430219608314600009002000706096508310')"><center><sudoku-text><font color="#EEEEEE">4</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('080523070030079482001400539003090721209300054156000800098256007300807945510000208')"><center><sudoku-text><font color="#EEEEEE">5</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('200401700050003160030652040400305009910840000068200500043196080002530001009000603')"><center><sudoku-text><font color="#EEEEEE">6</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('920085340080390027010026090091007608564003000002560010209000531700450200006032700')"><center><sudoku-text><font color="#EEEEEE">7</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('062300050000280009030960104170036002020809600659102708206003001004700580715000040')"><center><sudoku-text><font color="#EEEEEE">8</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('003805000000130864009074105264000950050900701001508620020751009015080472800402516')"><center><sudoku-text><font color="#EEEEEE">9</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('005694007697000805030087906074920038020731059003800672040050200109003580052008790')"><center><sudoku-text><font color="#EEEEEE">10</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('368200500090070260205086001620390005080001304139805700013960050900050870802004010')"><center><sudoku-text><font color="#EEEEEE">11</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('109807600000390018875006004047102005008603427200470831792060100060734280480020076')"><center><sudoku-text><font color="#EEEEEE">12</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('005071020210000796040620300007450060900807405400309087872030000090004630604290100')"><center><sudoku-text><font color="#EEEEEE">13</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('000090056045072001296108400160900730070804105020700904057210080009387000802000610')"><center><sudoku-text><font color="#EEEEEE">14</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('705901200000537910109620075248005000900080621000279004471052006860000052000316800')"><center><sudoku-text><font color="#EEEEEE">15</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('925040800043000970800026304570260080000871600286504007400780031002603748038415060')"><center><sudoku-text><font color="#EEEEEE">16</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('216090005495000712000152409047320090632005170000647520103200608700008000800413200')"><center><sudoku-text><font color="#EEEEEE">17</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('705008490420001650006074021867095004030002500500800709609410080170000900004359106')"><center><sudoku-text><font color="#EEEEEE">18</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('002018007100300892406907000290851040061034905540009320350400170614700039027000650')"><center><sudoku-text><font color="#EEEEEE">19</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('751008030062001850003607901507063004418020003326584100005970600000806390080405010')"><center><sudoku-text><font color="#EEEEEE">20</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('200037680006109200510060003400098062803406709609702048307600005000800127042075800')"><center><sudoku-text><font color="#EEEEEE">21</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('600010570400260008791840060086000402049523000002006015205900700004670851800004300')"><center><sudoku-text><font color="#EEEEEE">22</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('970105002010000470600049000050004603100627854402000701040276085506090030297850000')"><center><sudoku-text><font color="#EEEEEE">23</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('036071809408900061071058200310706098800045070647810000004190502580064000120000003')"><center><sudoku-text><font color="#EEEEEE">24</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('570039000690000708000086290059617020001090400380500001803900074720105300900378612')"><center><sudoku-text><font color="#EEEEEE">25</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('000800350075900012346102009030580004460000795952046003004037921620098000703210040')"><center><sudoku-text><font color="#EEEEEE">26</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('080000740002064000006078051100690580905080173320005000247830090009246000630907804')"><center><sudoku-text><font color="#EEEEEE">27</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('042090001093002050108300692210670300730905120409120006050061280000007064304280700')"><center><sudoku-text><font color="#EEEEEE">28</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('407168090600290478859004016034019080005087901001020045070300020040000107190006300')"><center><sudoku-text><font color="#EEEEEE">29</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('020041860010280374490700000700168400900050100156004703043070051270410008001803207')"><center><sudoku-text><font color="#EEEEEE">30</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('470000386056040720308060054715630200630200471020970605961300002000098560500426907')"><center><sudoku-text><font color="#EEEEEE">31</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('000003065423100007010970320200040078001507900700002530608004250000035006145269000')"><center><sudoku-text><font color="#EEEEEE">32</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('380020007047098000000716080004069305036480090502030046200803710058001200170900050')"><center><sudoku-text><font color="#EEEEEE">33</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('003020794604708200017430006041005902720043100060071008800300451039504000400600039')"><center><sudoku-text><font color="#EEEEEE">34</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('300400086087059000060208405803560209592813060170002803050006341608090020730005000')"><center><sudoku-text><font color="#EEEEEE">35</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('063028507870005001010430086000070053087014200309800070430002605602940700700060032')"><center><sudoku-text><font color="#EEEEEE">36</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('010700300549001700060025801200490005003070280680050010095280060000049572706500490')"><center><sudoku-text><font color="#EEEEEE">37</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('430602070070000269680007010100540003043090500805000142004800631060135400310420908')"><center><sudoku-text><font color="#EEEEEE">38</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('619008024005419006840050000001000093000170608350084070108300200502000069000265831')"><center><sudoku-text><font color="#EEEEEE">39</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('800210090954008032021903480100830904208691053005402600010306205080120349732000001')"><center><sudoku-text><font color="#EEEEEE">40</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('600900420020706095340008700890070240400080059036200000005300174063010502700802006')"><center><sudoku-text><font color="#EEEEEE">41</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('000079000395004018040000529008600903007005040200700180900321806580096230620800491')"><center><sudoku-text><font color="#EEEEEE">42</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('506000174000041300042500060087009210009067008300480507620010700090034621013700040')"><center><sudoku-text><font color="#EEEEEE">43</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('000586004850100700091230800000840976687000430030601000702000000340059602009460380')"><center><sudoku-text><font color="#EEEEEE">44</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('409060701760100940000470265001802004690034020304607800810006500230080070000725018')"><center><sudoku-text><font color="#EEEEEE">45</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('059470800300050607847300510983125004712030050004089021000540070405806203030200480')"><center><sudoku-text><font color="#EEEEEE">46</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('097001064000273009805906100310760890000309026640050010020090607401605000006037250')"><center><sudoku-text><font color="#EEEEEE">47</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('034061508090054031010320469100400983040530102273008000307210050085043010000680390')"><center><sudoku-text><font color="#EEEEEE">48</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('007406090006082050409075206032710500160040008870500302090004123200390680600800049')"><center><sudoku-text><font color="#EEEEEE">49</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('009250310173900024504107008345000100017890640980341002000718490750060000001003876')"><center><sudoku-text><font color="#EEEEEE">50</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('260008040003100060900650012092007805080020174504030000007310000005084320800070451')"><center><sudoku-text><font color="#EEEEEE">51</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('009008070070624001230005406002090153004217060906800020600040318098002507540080002')"><center><sudoku-text><font color="#EEEEEE">52</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('600024070095700284002380000100850796807001400903047008030605000040000927780490650')"><center><sudoku-text><font color="#EEEEEE">53</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('100006423020108057047005001081290700400003900509060300034002070005000106716500084')"><center><sudoku-text><font color="#EEEEEE">54</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('000045678410706050067320401071402580902000300050860027049050800800201064100080735')"><center><sudoku-text><font color="#EEEEEE">55</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('082310506507000081301608092835091004079000805010285900690840050750009230100503460')"><center><sudoku-text><font color="#EEEEEE">56</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('000084910000010407164900500203470050090020304700301080918246000020000896306008042')"><center><sudoku-text><font color="#EEEEEE">57</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('308100400000309050001050386780090010090762500024010607007520060249038100610000032')"><center><sudoku-text><font color="#EEEEEE">58</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('003060795500980300972000004010346972039701640746000500027503106651200439390614050')"><center><sudoku-text><font color="#EEEEEE">59</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('537120080090430002010008076085072010020501408003894000806003500902000860300080247')"><center><sudoku-text><font color="#EEEEEE">60</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('080210300401009806000078900005980103300600087600003409700830694130004028894760030')"><center><sudoku-text><font color="#EEEEEE">61</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('850002064160548090704001582901006047507100608080427901096084010000230076270010409')"><center><sudoku-text><font color="#EEEEEE">62</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('075090603819030005006280007490521300000940158030006400604009020000708560107400830')"><center><sudoku-text><font color="#EEEEEE">63</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('064005392975400800102086045406010923010243650000608004500701400007820016640300080')"><center><sudoku-text><font color="#EEEEEE">64</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('034590010865100930090086052300002084486950000700008506508600321002810765010275800')"><center><sudoku-text><font color="#EEEEEE">65</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('060542080002068901847091060070000495304209800008050027690004278000680050701000604')"><center><sudoku-text><font color="#EEEEEE">66</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('900080754700001300083270060005308200070910008240700093600029805001857039050006400')"><center><sudoku-text><font color="#EEEEEE">67</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('040000927379040001106070045960003702007085609530607010080109000290000500004806190')"><center><sudoku-text><font color="#EEEEEE">68</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('062435800050678920400002305091000080000583070700029406036800041200046058840250000')"><center><sudoku-text><font color="#EEEEEE">69</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('000075813500690072784200005820010900035080061006703020050169000600807300972050186')"><center><sudoku-text><font color="#EEEEEE">70</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('840200069907650000006930402001086327670002800230007650009463010160020735000015040')"><center><sudoku-text><font color="#EEEEEE">71</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('008904073709600004062070580920060300000049850600053007043002908017000030000408015')"><center><sudoku-text><font color="#EEEEEE">72</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('750209810089053204402000035004731000500090307006000091910002548030184709200975003')"><center><sudoku-text><font color="#EEEEEE">73</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('062005819031040200000821600085400002010208064203000170794650000100780495000004726')"><center><sudoku-text><font color="#EEEEEE">74</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('800057001900000752530010009098600070010780623370125080749003000000002590602800430')"><center><sudoku-text><font color="#EEEEEE">75</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('526007180007001503001825040058060017600570832740210000002709301074000068030180270')"><center><sudoku-text><font color="#EEEEEE">76</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('084057300010009056006420007260304100107000603003706092300962710420173065600540239')"><center><sudoku-text><font color="#EEEEEE">77</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('050000602127309805090582007201400056780001003605000781002897010873105000004000578')"><center><sudoku-text><font color="#EEEEEE">78</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('310072000050008047020956030004000350805207609000563000502710903609005801070080005')"><center><sudoku-text><font color="#EEEEEE">79</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('060800159351009400008700020806095030502010890930078001020500306703102040005983007')"><center><sudoku-text><font color="#EEEEEE">80</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('002610400480005730063004012600007103307061500120030008009146000004908361706350840')"><center><sudoku-text><font color="#EEEEEE">81</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('003021000490000501000507604000050168580060943046308750029106070304800009170009480')"><center><sudoku-text><font color="#EEEEEE">82</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('002093870850071093390842500021409005986000030005780021200004060040327009509108302')"><center><sudoku-text><font color="#EEEEEE">83</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('405693200070850003023040965000504608100000320049038000781000030360000419000061070')"><center><sudoku-text><font color="#EEEEEE">84</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('792050600843000001060894032020087416374600080006249070407526003638970500200408100')"><center><sudoku-text><font color="#EEEEEE">85</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('800045007260000980370809000483070061001480270002651040106500024008726003020030856')"><center><sudoku-text><font color="#EEEEEE">86</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('012070800070080615000154009760500124040310056105402000009001568807020000651009730')"><center><sudoku-text><font color="#EEEEEE">87</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('120006350560980000000035862001720036000569170097001520209807045740090000800250703')"><center><sudoku-text><font color="#EEEEEE">88</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('009540800845700023702080045000008362680071400204009070000135084570800006030020501')"><center><sudoku-text><font color="#EEEEEE">89</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('264008001080930402309014860806002035400070620930501040090087214608100070041300906')"><center><sudoku-text><font color="#EEEEEE">90</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('054387100380194000009000380003508701590030062061709500930070006040010238200600057')"><center><sudoku-text><font color="#EEEEEE">91</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('000904050985001064142056080803000091059148300000060025498600200600000518000873600')"><center><sudoku-text><font color="#EEEEEE">92</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('001080076034260510009530040953040260400106030610352900070809003390005607000600108')"><center><sudoku-text><font color="#EEEEEE">93</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('968500170003601400405309080670913500090820000300005041846007009100000802009138060')"><center><sudoku-text><font color="#EEEEEE">94</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('159008070400071089087469251001890705095000602702004190204905867068147920900280510')"><center><sudoku-text><font color="#EEEEEE">95</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('052000080080157023163090700509010204200640308806035001370506400608001030005903016')"><center><sudoku-text><font color="#EEEEEE">96</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('609845000051900008084102090902500004805270600040008235010056080026000740790001056')"><center><sudoku-text><font color="#EEEEEE">97</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('180425007400397082027801000000000639894730500001052700708010090519248000032570014')"><center><sudoku-text><font color="#EEEEEE">98</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('000042079075030084890005230001057800500694007607018490700100906320070108016509020')"><center><sudoku-text><font color="#EEEEEE">99</font></sudoku-text></center></div><br>
+<div class="levelButton" onclick="loadLevel('004000657702004801350700020093500210470010960010309508000031706140072095007405180')"><center><sudoku-text><font color="#EEEEEE">100</font></sudoku-text></center></div><br>
+</body>
+</html>
